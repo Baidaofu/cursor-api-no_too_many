@@ -5,8 +5,8 @@ const { stringToHex, chunkToUtf8String, getRandomIDPro, generateCursorChecksum }
 const app = express();
 
 // 中间件配置
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
 
 function generateChecksum(token) {
